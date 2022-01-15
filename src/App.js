@@ -1,7 +1,7 @@
 import "./App.css";
-import LoginPage from "./LoginPage";
-import Dashboard from "./Dashboard";
-import Productlist from "./Products";
+import LoginPage from "./component/LoginPage";
+import Dashboard from "./component/Dashboard";
+import Productlist from "./component/Products";
 import React, { Component } from "react";
 import { Popover, PopoverHeader, PopoverBody, Alert, UncontrolledAlert } from "reactstrap";
 
@@ -27,13 +27,7 @@ export default class App extends Component {
     if (this.state.pagenumber === 0) {
       return (
         <div>
-          <LoginPage handler={this.handleloginclick}></LoginPage>
-          if (this.state.loginerror)
-          {
-            <UncontrolledAlert color="info">
-              I am an alert and I can be dismissed!
-            </UncontrolledAlert>
-          }
+          <LoginPage handler={this.handleloginclick} class="LoginPanel"></LoginPage>
         </div>
       );
     } else if (this.state.pagenumber === 1) {
