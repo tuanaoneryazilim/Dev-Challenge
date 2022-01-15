@@ -3,6 +3,7 @@ import LoginPage from "./LoginPage";
 import Dashboard from "./Dashboard";
 import Productlist from "./Products";
 import React, { Component } from "react";
+import { Popover, PopoverHeader, PopoverBody, Alert, UncontrolledAlert } from "reactstrap";
 
 export default class App extends Component {
   constructor(props) {
@@ -13,12 +14,13 @@ export default class App extends Component {
     Users: [{ UserId: "1", UserName: "admin", UserPw: "admin" }],
     pagenumber: 0, //0=login, 1=Dashboard
     CurrentUsersId: [],
+    loginerror: false,
   };
   handleloginclick(UName, Password) {
     this.state.Users.map((user) =>
       UName === user.UserName && Password === user.UserPw
         ? this.setState({ pagenumber: 1 })
-        : alert(this.state.pagenumber)
+        : this.setState({ loginerror: true })
     );
   }
   render() {
@@ -26,6 +28,12 @@ export default class App extends Component {
       return (
         <div>
           <LoginPage handler={this.handleloginclick}></LoginPage>
+          if (this.state.loginerror)
+          {
+            <UncontrolledAlert color="info">
+              I am an alert and I can be dismissed!
+            </UncontrolledAlert>
+          }
         </div>
       );
     } else if (this.state.pagenumber === 1) {

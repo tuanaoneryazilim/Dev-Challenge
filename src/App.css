@@ -36,21 +36,28 @@
     transform: rotate(360deg);
   }
 }
-.LoginPanel{
+.LoginPanel {
   min-height: 100vh;
   width: 40%;
-  justify-content:center;
+  justify-content: center;
   flex-direction: column;
   display: flex;
   padding: 5%;
 }
-.LoginForm
-{
+.LoginForm {
   margin: 5px;
 }
-.LoginLogo{
-  float:left;
+.LoginLogo {
+  float: left;
   width: 50%;
   height: 100vh;
-  padding:15px;
+  padding: 15px;
+}
+.sabit {
+  z-index: 9999;
+  position: fixed;
+  _position: absolute;
+  bottom: 0px;
+  right: 0px;
+  clip: rect(0 100 85 0);
 }
