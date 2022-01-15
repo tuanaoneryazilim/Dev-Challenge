@@ -3,13 +3,6 @@ import LoginPage from "./component/LoginPage";
 import Dashboard from "./component/Dashboard";
 import Productlist from "./component/Products";
 import React, { Component } from "react";
-import {
-  Popover,
-  PopoverHeader,
-  PopoverBody,
-  Alert,
-  UncontrolledAlert,
-} from "reactstrap";
 
 export default class App extends Component {
   constructor(props) {
@@ -36,7 +29,11 @@ export default class App extends Component {
           <LoginPage
             handler={this.handleloginclick}
             class="LoginPanel"
-          ></LoginPage>
+          >
+            if (loginerror) {
+              <h2>Test</h2>
+            }
+          </LoginPage>
         </div>
       );
     } else if (this.state.pagenumber === 1) {
@@ -46,6 +43,7 @@ export default class App extends Component {
         </div>
       );
     } else if (this.state.pagenumber === 2) {
+      <div><h2>Empty Page</h2></div>
     }
   }
 }
