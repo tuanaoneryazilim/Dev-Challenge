@@ -36,18 +36,25 @@ export default class Productlist extends Component {
         productsmodel: "Mod4",
         price: 1000,
       },
-    ],selectbrand:"A3",selectmodel:""
+    ],
+    selectbrand: "A3",
+    selectmodel: "",
   };
   selectproduct = (product) => {
-    this.setState({selectid:product.productsId});
-  }
+    this.setState({ selectid: product.productsId });
+  };
   render() {
     return (
       <div>
-          <h3>Vehicle Parts</h3>
+        <h3>Vehicle Parts</h3>
         <ListGroup>
-          {this.state.products.map(product => ( product.productsbrand == this.state.selectbrand ?
-            <ListGroupItem onClick={() => this.selectproduct(product)} key={product.productsId}>{product.productsname}</ListGroupItem>:null
+          {this.state.products.map((product) => (
+            <ListGroupItem
+              onClick={() => this.selectproduct(product)}
+              key={product.productsId}
+            >
+              {product.productsname}
+            </ListGroupItem>
           ))}
         </ListGroup>
       </div>

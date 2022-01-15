@@ -11,7 +11,7 @@ export default class App extends Component {
   }
   state = {
     Users: [{ UserId: "1", UserName: "admin", UserPw: "admin" }],
-    pagenumber: 0, //0=login, 1=Dashboard
+    pagenumber: 1, //0=login, 1=Dashboard
     CurrentUsersId: [],
     loginerror: false,
   };
