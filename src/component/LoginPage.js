@@ -14,7 +14,7 @@ export default class LoginPage extends Component {
           <img src={loginlogo} style={{width:'100%', height:'100%'}}></img>
         </div>
         <LoginPanel
-          handler={this.handleloginclick}
+          handler={this.props.handler}
           class={this.props.class}
         ></LoginPanel>
       </div>
