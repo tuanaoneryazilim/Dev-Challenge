@@ -49,8 +49,8 @@ export default class App extends Component {
               alignItems="flex-end"
               spacing={2}
             >
-              <Alert severity="error" onClose={() => {this.setState({loginerror:false})}}>
-                <AlertTitle>Hata</AlertTitle>
+              <Alert sx={{backgroundColor:"white", borderLeft:"red", borderLeftStyle:"solid"}} severity="error" onClose={() => {this.setState({loginerror:false})}}>
+                <AlertTitle><strong>Hata</strong></AlertTitle>
                 Kullanıcı Adı veya Şifreniz Hatalı
               </Alert>
             </Stack>
