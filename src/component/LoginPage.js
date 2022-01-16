@@ -8,7 +8,7 @@ export default class LoginPage extends Component {
     return (
       <div>
         <div className="LoginLogo">
-          <img src={loginlogo} style={{width:'100%', height:'100%'}}></img>
+          <img src={loginlogo} style={{ width: "100%", height: "100%" }}></img>
         </div>
         <LoginPanel
           handler={this.props.handler}

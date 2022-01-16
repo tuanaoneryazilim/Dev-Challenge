@@ -42,7 +42,13 @@ export default class App extends Component {
               handler={this.handleloginclick}
               class="LoginPanel"
             ></LoginPage>
-            <Stack sx={{ width: "100%" }} spacing={2}>
+            <Stack
+              sx={{ position:"absolute", top:"85vh", left:"55%" }}
+              direction="row"
+              justifyContent="flex-end"
+              alignItems="flex-end"
+              spacing={2}
+            >
               <Alert severity="error">
                 <AlertTitle>Error</AlertTitle>
                 This is an error alert — <strong>check it out!</strong>
