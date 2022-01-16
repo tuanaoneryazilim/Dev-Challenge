@@ -43,15 +43,15 @@ export default class App extends Component {
               class="LoginPanel"
             ></LoginPage>
             <Stack
-              sx={{ position:"absolute", top:"85vh", left:"55%" }}
+              sx={{ position:"absolute", bottom:"2vh", right:"15%" }}
               direction="row"
               justifyContent="flex-end"
               alignItems="flex-end"
               spacing={2}
             >
-              <Alert severity="error">
-                <AlertTitle>Error</AlertTitle>
-                This is an error alert — <strong>check it out!</strong>
+              <Alert severity="error" onClose={() => {this.setState({loginerror:false})}}>
+                <AlertTitle>Hata</AlertTitle>
+                Kullanıcı Adı veya Şifreniz Hatalı
               </Alert>
             </Stack>
           </div>
