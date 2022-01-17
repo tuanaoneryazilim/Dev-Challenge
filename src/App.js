@@ -6,6 +6,8 @@ import AlertTitle from "@mui/material/AlertTitle";
 import React, { Component } from "react";
 import { Stack } from "@mui/material";
 
+let OnlineUsers = [UserId,Inbasket[1]];
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -13,16 +15,23 @@ export default class App extends Component {
   }
   state = {
     Users: [{ UserId: "1", UserName: "admin", UserPw: "admin" }],
+    OnlineUsers: [{ UserId: "", Inbasket: [{ ProductId: "", Count: 0 }] }],
     pagenumber: 0, //0=login, 1=Dashboard
-    CurrentUsersId: [],
+    CurrentUserId: 0,
     loginerror: false,
   };
   handleloginclick(UName, Password) {
+    Uid = null;
     this.state.Users.map((user) =>
       UName === user.UserName && Password === user.UserPw
-        ? this.setState({ pagenumber: 1 })
+        ? (Uid = user)
         : this.setState({ loginerror: true })
     );
+    if (Uid != null)
+    {
+      this.Setstate({CurrentUserId:Uid});
+      this.Setstate({});
+    }
   }
   render() {
     if (this.state.pagenumber === 0) {
@@ -43,14 +52,26 @@ export default class App extends Component {
               class="LoginPanel"
             ></LoginPage>
             <Stack
-              sx={{ position:"absolute", bottom:"2vh", right:"15%" }}
+              sx={{ position: "absolute", bottom: "2vh", right: "15%" }}
               direction="row"
               justifyContent="flex-end"
               alignItems="flex-end"
               spacing={2}
             >
-              <Alert sx={{backgroundColor:"white", borderLeft:"red", borderLeftStyle:"solid"}} severity="error" onClose={() => {this.setState({loginerror:false})}}>
-                <AlertTitle><strong>Hata</strong></AlertTitle>
+              <Alert
+                sx={{
+                  backgroundColor: "white",
+                  borderLeft: "red",
+                  borderLeftStyle: "solid",
+                }}
+                severity="error"
+                onClose={() => {
+                  this.setState({ loginerror: false });
+                }}
+              >
+                <AlertTitle>
+                  <strong>Hata</strong>
+                </AlertTitle>
                 Kullanıcı Adı veya Şifreniz Hatalı
               </Alert>
             </Stack>
