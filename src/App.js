@@ -6,8 +6,6 @@ import AlertTitle from "@mui/material/AlertTitle";
 import React, { Component } from "react";
 import { Stack } from "@mui/material";
 
-let OnlineUsers = [UserId,Inbasket[1]];
-
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -29,8 +27,7 @@ export default class App extends Component {
     );
     if (Uid != null)
     {
-      this.Setstate({CurrentUserId:Uid});
-      this.Setstate({});
+      this.setState({Users:[{UserId:"2", UserName:"Deneme", UserPw:"fln"}]});
     }
   }
   render() {
