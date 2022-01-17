@@ -13,13 +13,15 @@ export default class App extends Component {
   }
   state = {
     Users: [{ UserId: "1", UserName: "admin", UserPw: "admin" }],
-    OnlineUsers: [{ UserId: "", Inbasket: [{ ProductId: "", Count: 0 }] }],
+    OnlineUsers: [{ UserId: "" }],
+    Baskets: [{UserId:"" ,ProductId: "", Count: 0 }],
+    Filters:[{Brand="", Model="", Id=""}],
     pagenumber: 0, //0=login, 1=Dashboard
     CurrentUserId: 0,
     loginerror: false,
   };
   handleloginclick(UName, Password) {
-    Uid = null;
+    let Uid = null;
     this.state.Users.map((user) =>
       UName === user.UserName && Password === user.UserPw
         ? (Uid = user)
@@ -27,7 +29,8 @@ export default class App extends Component {
     );
     if (Uid != null)
     {
-      this.setState({Users:[{UserId:"2", UserName:"Deneme", UserPw:"fln"}]});
+        this.setState({OnlineUsers:Uid});
+        this.setState({CurrentUserId:Uid});
     }
   }
   render() {
