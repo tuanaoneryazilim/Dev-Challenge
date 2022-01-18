@@ -1,4 +1,6 @@
+import { TablePagination } from "@mui/material";
 import React, { Component } from "react";
+import StickyHeadTable from "./Products";
 import Productlist from "./Products";
 
 export default class Dashboard extends Component {
@@ -9,9 +11,7 @@ export default class Dashboard extends Component {
   render() {
     return (
       <div>
-        <Productlist>
-          
-        </Productlist>
+        <StickyHeadTable rows={this.props.row}></StickyHeadTable>
       </div>
     );
   }

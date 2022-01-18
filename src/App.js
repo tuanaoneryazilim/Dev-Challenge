@@ -6,16 +6,27 @@ import AlertTitle from "@mui/material/AlertTitle";
 import React, { Component } from "react";
 import { Stack } from "@mui/material";
 
+const rows = [
+  { img: "", partno: "10012423", partname: "Dikachu", price: 197.350 },
+  { img: "", partno: "14278569", partname: "Pikachu", price: 15.350 },
+  { img: "", partno: "55423610", partname: "Raiju", price: 20.350 },
+  { img: "", partno: "78487845", partname: "Pichu", price: 1.350 },
+  { img: "", partno: "68959638", partname: "Raichu", price: 53.350 },
+];
+
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.handleloginclick = this.handleloginclick.bind(this);
   }
   state = {
-    Users: [{ UserId: "1", UserName: "admin", UserPw: "admin" }],
+    Users: [
+      { UserId: "1", UserName: "admin", UserPw: "admin" },
+      { UserId: "1", UserName: "root", UserPw: "root" },
+    ],
     OnlineUsers: [{ UserId: "" }],
-    Baskets: [{UserId:"" ,ProductId: "", Count: 0 }],
-    Filters:[{Brand="", Model="", Id=""}],
+    Baskets: [{ UserId: "", ProductId: "", Count: 0 }],
+    Filters: [{ Brand: "", Model: "", Id: "" }],
     pagenumber: 0, //0=login, 1=Dashboard
     CurrentUserId: 0,
     loginerror: false,
@@ -27,10 +38,10 @@ export default class App extends Component {
         ? (Uid = user)
         : this.setState({ loginerror: true })
     );
-    if (Uid != null)
-    {
-        this.setState({OnlineUsers:Uid});
-        this.setState({CurrentUserId:Uid});
+    if (Uid != null) {
+      this.setState({ OnlineUsers: Uid });
+      this.setState({ CurrentUserId: Uid });
+      this.setState({ pagenumber: 1 });
     }
   }
   render() {
@@ -81,7 +92,7 @@ export default class App extends Component {
     } else if (this.state.pagenumber === 1) {
       return (
         <div>
-          <Dashboard></Dashboard>
+          <Dashboard row={rows}></Dashboard>
         </div>
       );
     } else {

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -9,32 +10,23 @@ import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 
 const columns = [
-  { id: 'name', label: 'Name', minWidth: 170 },
-  { id: 'code', label: 'ISO\u00a0Code', minWidth: 100 },
+  { id: 'image', label: 'Resim', minWidth: 170 },
+  { id: 'partno', label: 'Parça Numarası', minWidth: 100 },
   {
-    id: 'population',
-    label: 'Population',
+    id: 'partname',
+    label: 'Parça Adı',
     minWidth: 170,
     align: 'right',
-    format: (value) => value.toLocaleString('en-US'),
   },
   {
-    id: 'size',
-    label: 'Size\u00a0(km\u00b2)',
+    id: 'price',
+    label: 'Fiyatı',
     minWidth: 170,
     align: 'right',
-    format: (value) => value.toLocaleString('en-US'),
-  },
-  {
-    id: 'density',
-    label: 'Density',
-    minWidth: 170,
-    align: 'right',
-    format: (value) => value.toFixed(2),
-  },
+  }
 ];
 
-function createData(name, code, population, size) {
+/*function createData(name, code, population, size) {
   const density = population / size;
   return { name, code, population, size, density };
 }
@@ -55,12 +47,12 @@ const rows = [
   createData('Russia', 'RU', 146793744, 17098246),
   createData('Nigeria', 'NG', 200962417, 923768),
   createData('Brazil', 'BR', 210147125, 8515767),
-];
+];*/
 
-export default function StickyHeadTable() {
+export default function StickyHeadTable(props) {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
-
+  const { rows } = props;
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -121,3 +113,7 @@ export default function StickyHeadTable() {
     </Paper>
   );
 }
+
+StickyHeadTable.propTypes = {
+  rows: PropTypes.string.isRequired
+};
