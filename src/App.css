@@ -61,3 +61,8 @@
   right: 0px;
   clip: rect(0 100 85 0);
 }
+.Dashtable
+{
+  background-color: red;
+  width:80%;
+}

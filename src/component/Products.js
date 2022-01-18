@@ -10,7 +10,7 @@ import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 
 const columns = [
-  { id: 'image', label: 'Resim', minWidth: 25 },
+  { id: 'img', label: 'Resim', minWidth: 25 },
   { id: 'partno', label: 'Parça Numarası', minWidth: 25 },
   {
     id: 'partname',

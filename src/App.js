@@ -7,11 +7,46 @@ import React, { Component } from "react";
 import { Stack } from "@mui/material";
 
 const rows = [
-  { img: "", partno: "10012423", partname: "Dikachu", price: 197.350 },
-  { img: "", partno: "14278569", partname: "Pikachu", price: 15.350 },
-  { img: "", partno: "55423610", partname: "Raiju", price: 20.350 },
-  { img: "", partno: "78487845", partname: "Pichu", price: 1.350 },
-  { img: "", partno: "68959638", partname: "Raichu", price: 53.350 },
+  {
+    img: "",
+    partno: "10012423",
+    partname: "Dikachu",
+    price: 197.35,
+    partmodel: "Model-1",
+    partbrand: "Brand-1",
+  },
+  {
+    img: "",
+    partno: "14278569",
+    partname: "Pikachu",
+    price: 15.35,
+    partmodel: "Model-2",
+    partbrand: "Brand-2",
+  },
+  {
+    img: "",
+    partno: "55423610",
+    partname: "Raiju",
+    price: 20.35,
+    partmodel: "Model-3",
+    partbrand: "Brand-2",
+  },
+  {
+    img: "",
+    partno: "78487845",
+    partname: "Pichu",
+    price: 1.35,
+    partmodel: "Model-2",
+    partbrand: "Brand-3",
+  },
+  {
+    img: "",
+    partno: "68959638",
+    partname: "Raichu",
+    price: 53.35,
+    partmodel: "Model-3",
+    partbrand: "Brand-3",
+  },
 ];
 
 export default class App extends Component {

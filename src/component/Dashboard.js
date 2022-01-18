@@ -1,5 +1,6 @@
 import { TablePagination } from "@mui/material";
 import React, { Component } from "react";
+import { Dropdown } from "reactstrap";
 import StickyHeadTable from "./Products";
 import Productlist from "./Products";
 
@@ -8,9 +9,20 @@ export default class Dashboard extends Component {
     super(props);
     this.state = {};
   }
+  /*dropitem()
+  {
+    let ht = new HashTable();
+    return(
+    )
+  }*/
   render() {
     return (
-      <div>
+      <div className="Dashtable">
+        <Dropdown>
+          {
+            //this.dropitem()
+          }
+        </Dropdown>
         <StickyHeadTable rows={this.props.rows}></StickyHeadTable>
       </div>
     );
