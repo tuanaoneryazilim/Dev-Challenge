@@ -11,7 +11,7 @@ export default class Dashboard extends Component {
   render() {
     return (
       <div>
-        <StickyHeadTable rows={this.props.row}></StickyHeadTable>
+        <StickyHeadTable rows={this.props.rows}></StickyHeadTable>
       </div>
     );
   }

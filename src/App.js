@@ -92,7 +92,7 @@ export default class App extends Component {
     } else if (this.state.pagenumber === 1) {
       return (
         <div>
-          <Dashboard row={rows}></Dashboard>
+          <Dashboard rows={rows}></Dashboard>
         </div>
       );
     } else {
