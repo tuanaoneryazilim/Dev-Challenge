@@ -18,11 +18,15 @@ export default class Basket extends Component {
   }
   render() {
     return (
-      <div style={{float:"right"}}>
-        <Navbar bg="light" expand={false}>
-          <Container fluid>
-            <Navbar.Toggle aria-controls="offcanvasNavbar"/>
-            <Navbar.Brand href="#"> Detaylı Sepeti Göster</Navbar.Brand>
+      <div style={{ float: "right", width:"20%" }}>
+        <Navbar expand={false}>
+          <Container>
+              <Navbar.Toggle />
+              <Navbar.Brand href="#">Detaylı Sepeti Göster</Navbar.Brand>
+            <Nav >
+              <p></p>
+              <h5>Sepet Özeti</h5>
+            </Nav>
             <Navbar.Offcanvas
               id="offcanvasNavbar"
               aria-labelledby="offcanvasNavbarLabel"
