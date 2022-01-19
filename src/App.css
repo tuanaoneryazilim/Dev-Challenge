@@ -81,7 +81,6 @@
 }
 .account
 {
-  background-color: red;
   width:100%;
   display:flex;
   flex-direction: column;
