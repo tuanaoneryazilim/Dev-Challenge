@@ -1,27 +1,34 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import React, { Component } from "react";
-import { Dropdown, DropdownItem } from "reactstrap";
+import {
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+} from "reactstrap";
 import StickyHeadTable from "./Products";
-import HashTable from "./HashTable";
 
 export default class Dashboard extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.branddroptoggle = this.branddroptoggle.bind(this);
   }
-  dropitem(drp) {
-    data = [{}];
-    data.map(dt => );
-    if (drp === 0) {
-      bt.forEach(myFunction);
-      function myFunction(item) {
-        <DropdownItem>item</DropdownItem>;
-      }
-    }
+  state = { isOpen: false };
+  branddroptoggle() {
+    let value = !this.state.isOpen;
+    this.setState({isOpen:value});
   }
+
   render() {
     return (
       <div className="Dashtable">
-        <Dropdown>{this.dropitem(0)}</Dropdown>
+        <Dropdown isOpen={this.state.isOpen} toggle={() => this.branddroptoggle()}>
+          <DropdownToggle caret>Dropdown</DropdownToggle>
+          <DropdownMenu>
+            <DropdownItem header>Header</DropdownItem>
+            <DropdownItem>Action</DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
         <StickyHeadTable rows={this.props.rows}></StickyHeadTable>
       </div>
     );

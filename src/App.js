@@ -12,40 +12,70 @@ const rows = [
     partno: "10012423",
     partname: "Dikachu",
     price: 197.35,
-    partmodel: "Model-1",
-    partbrand: "Brand-1",
+    partmodelid: "1",
+    partbrandid: "1",
   },
   {
     img: "",
     partno: "14278569",
     partname: "Pikachu",
     price: 15.35,
-    partmodel: "Model-2",
-    partbrand: "Brand-2",
+    partmodelid: "2",
+    partbrandid: "2",
   },
   {
     img: "",
     partno: "55423610",
     partname: "Raiju",
     price: 20.35,
-    partmodel: "Model-3",
-    partbrand: "Brand-2",
+    partmodelid: "1",
+    partbrandid: "2",
   },
   {
     img: "",
     partno: "78487845",
     partname: "Pichu",
     price: 1.35,
-    partmodel: "Model-2",
-    partbrand: "Brand-3",
+    partmodelid: "2",
+    partbrandid: "1",
   },
   {
     img: "",
     partno: "68959638",
     partname: "Raichu",
     price: 53.35,
-    partmodel: "Model-3",
-    partbrand: "Brand-3",
+    partmodelid: "3",
+    partbrandid: "3",
+  },
+];
+
+const brands = [
+  {
+    brandid: "1",
+    brandname: "marka1",
+  },
+  {
+    brandid: "2",
+    brandname: "marka2",
+  },
+  {
+    brandid: "3",
+    brandname: "marka3",
+  },
+];
+
+const models = [
+  {
+    modelid: "1",
+    modelname: "model1",
+  },
+  {
+    modelid: "2",
+    modelname: "model2",
+  },
+  {
+    modelid: "3",
+    modelname: "model3",
   },
 ];
 
@@ -62,7 +92,7 @@ export default class App extends Component {
     OnlineUsers: [{ UserId: "" }],
     Baskets: [{ UserId: "", ProductId: "", Count: 0 }],
     Filters: [{ Brand: "", Model: "", Id: "" }],
-    pagenumber: 0, //0=login, 1=Dashboard
+    pagenumber: 1, //0=login, 1=Dashboard
     CurrentUserId: 0,
     loginerror: false,
   };
@@ -127,7 +157,7 @@ export default class App extends Component {
     } else if (this.state.pagenumber === 1) {
       return (
         <div>
-          <Dashboard rows={rows}></Dashboard>
+          <Dashboard rows={rows} brands={brands} models={models}></Dashboard>
         </div>
       );
     } else {
