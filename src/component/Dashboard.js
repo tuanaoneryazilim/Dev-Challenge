@@ -6,6 +6,7 @@ import {
   DropdownMenu,
   DropdownToggle,
 } from "reactstrap";
+import Basket from "./Basket";
 import StickyHeadTable from "./Products";
 
 export default class Dashboard extends Component {
@@ -13,23 +14,33 @@ export default class Dashboard extends Component {
     super(props);
     this.branddroptoggle = this.branddroptoggle.bind(this);
   }
-  state = { isOpen: false };
+  state = { misOpen:false ,bisOpen: false, currentbrand:null, currentmodel:null, currentpartno:null};
   branddroptoggle() {
-    let value = !this.state.isOpen;
-    this.setState({isOpen:value});
+    let value = !this.state.bisOpen;
+    this.setState({bisOpen:value});
+  }
+  modeldroptoggle() {
+    let value = !this.state.misOpen;
+    this.setState({misOpen:value});
   }
 
   render() {
     return (
-      <div className="Dashtable">
-        <Dropdown isOpen={this.state.isOpen} toggle={() => this.branddroptoggle()}>
-          <DropdownToggle caret>Dropdown</DropdownToggle>
+      <div className="Dashboard">
+        <Dropdown className="dashdrop" isOpen={this.state.bisOpen} toggle={() => this.branddroptoggle()}>
+          <DropdownToggle className="dashdroptoggle" caret><h6 className="test">Marka</h6></DropdownToggle>
           <DropdownMenu>
-            <DropdownItem header>Header</DropdownItem>
-            <DropdownItem>Action</DropdownItem>
+            {this.props.brands.map(brand => <DropdownItem key={brand.brandid}>{brand.brandname}</DropdownItem>)}
+          </DropdownMenu>
+        </Dropdown>
+        <Dropdown className="dashdrop" isOpen={this.state.misOpen} toggle={() => this.modeldroptoggle()}>
+          <DropdownToggle className="dashdroptoggle" caret><h6 className="test">Marka</h6></DropdownToggle>
+          <DropdownMenu>
+            {this.props.models.map(model => <DropdownItem key={model.modelid}>{model.modelname}</DropdownItem>)}
           </DropdownMenu>
         </Dropdown>
         <StickyHeadTable rows={this.props.rows}></StickyHeadTable>
+        <Basket></Basket>
       </div>
     );
   }

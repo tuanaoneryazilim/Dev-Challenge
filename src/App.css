@@ -61,8 +61,22 @@
   right: 0px;
   clip: rect(0 100 85 0);
 }
-.Dashtable
-{
+.Dashboard {
   background-color: red;
-  width:80%;
+  width: 80%;
+}
+.dashdrop {
+  
+  margin:50px;
+  float: left;
+  text-align: left;
+}
+.dashdroptoggle {
+  width: 343px;
+}
+.test
+{
+  text-align: left;
+  float:left;
+  width:90%;
 }
