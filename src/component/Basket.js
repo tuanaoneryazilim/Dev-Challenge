@@ -1,15 +1,28 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Navbar, Container, NavbarBrand, Offcanvas, Nav, NavDropdown, Form, FormControl, Button } from "react-bootstrap";
+import {
+  Navbar,
+  Container,
+  NavbarBrand,
+  Offcanvas,
+  Nav,
+  NavDropdown,
+  Form,
+  FormControl,
+  Button,
+} from "react-bootstrap";
 
 export default class Basket extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
-      <div>
+      <div style={{float:"right"}}>
         <Navbar bg="light" expand={false}>
           <Container fluid>
-            <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand>
-            <Navbar.Toggle aria-controls="offcanvasNavbar" />
+            <Navbar.Toggle aria-controls="offcanvasNavbar"/>
+            <Navbar.Brand href="#"> Detaylı Sepeti Göster</Navbar.Brand>
             <Navbar.Offcanvas
               id="offcanvasNavbar"
               aria-labelledby="offcanvasNavbarLabel"

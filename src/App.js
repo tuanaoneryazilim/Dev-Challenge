@@ -87,13 +87,13 @@ export default class App extends Component {
   state = {
     Users: [
       { UserId: "1", UserName: "admin", UserPw: "admin" },
-      { UserId: "1", UserName: "root", UserPw: "root" },
+      { UserId: "2", UserName: "root", UserPw: "root" },
     ],
-    OnlineUsers: [{ UserId: "" }],
+    OnlineUsers: [{ }],
     Baskets: [{ UserId: "", ProductId: "", Count: 0 }],
     Filters: [{ Brand: "", Model: "", Id: "" }],
-    pagenumber: 1, //0=login, 1=Dashboard
-    CurrentUserId: 0,
+    pagenumber: 0, //0=login, 1=Dashboard
+    CurrentUserId:{},
     loginerror: false,
   };
   handleloginclick(UName, Password) {
@@ -104,8 +104,8 @@ export default class App extends Component {
         : this.setState({ loginerror: true })
     );
     if (Uid != null) {
-      this.setState({ OnlineUsers: Uid });
-      this.setState({ CurrentUserId: Uid });
+      this.setState({ OnlineUsers: this.state.OnlineUsers.concat(Uid) });
+      this.setState({ CurrentUser: Uid });
       this.setState({ pagenumber: 1 });
     }
   }
@@ -157,7 +157,12 @@ export default class App extends Component {
     } else if (this.state.pagenumber === 1) {
       return (
         <div>
-          <Dashboard rows={rows} brands={brands} models={models}></Dashboard>
+          <Dashboard
+            rows={rows}
+            brands={brands}
+            models={models}
+            CurrentUser={this.state.CurrentUser}
+          ></Dashboard>
         </div>
       );
     } else {

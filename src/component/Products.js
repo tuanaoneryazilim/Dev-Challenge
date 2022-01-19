@@ -21,6 +21,12 @@ const columns = [
     id: 'price',
     label: 'Fiyatı',
     minWidth: 170,
+  },
+  {
+    id: 'count',
+  },
+  {
+    id: 'button',
   }
 ];
 
@@ -84,6 +90,7 @@ export default function StickyHeadTable(props) {
         page={page}
         onPageChange={handleChangePage}
         onRowsPerPageChange={handleChangeRowsPerPage}
+        labelRowsPerPage="Sayfa Başına Ürün"
       />
     </Paper>
   );

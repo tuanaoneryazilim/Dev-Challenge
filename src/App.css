@@ -62,14 +62,12 @@
   clip: rect(0 100 85 0);
 }
 .Dashboard {
-  background-color: red;
-  width: 80%;
+  width: 100%;
+  height: 100vh;
 }
 .dashdrop {
-  
-  margin:50px;
-  float: left;
-  text-align: left;
+  margin:25px;
+  float:left;
 }
 .dashdroptoggle {
   width: 343px;
@@ -80,4 +78,15 @@
   float:left;
   width:90%;
   margin:auto;
+}
+.account
+{
+  width:100%;
+  display:flex;
+  flex-direction: column;
+}
+.otherdiv
+{
+  width:80%;
+  float:left;
 }
