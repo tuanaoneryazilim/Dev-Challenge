@@ -10,7 +10,7 @@ const rows = [
   {
     img: "",
     partno: "10012423",
-    partname: "Dikachu",
+    partname: "Part1",
     price: 197.35,
     partmodelid: "1",
     partbrandid: "1",
@@ -19,7 +19,7 @@ const rows = [
   {
     img: "",
     partno: "14278569",
-    partname: "Pikachu",
+    partname: "Part2",
     price: 15.35,
     partmodelid: "2",
     partbrandid: "2",
@@ -28,7 +28,7 @@ const rows = [
   {
     img: "",
     partno: "55423610",
-    partname: "Raiju",
+    partname: "Part3",
     price: 20.35,
     partmodelid: "1",
     partbrandid: "2",
@@ -37,7 +37,7 @@ const rows = [
   {
     img: "",
     partno: "78487845",
-    partname: "Pichu",
+    partname: "Part4",
     price: 1.35,
     partmodelid: "2",
     partbrandid: "1",
@@ -46,7 +46,7 @@ const rows = [
   {
     img: "",
     partno: "68959638",
-    partname: "Raichu",
+    partname: "Part5",
     price: 53.35,
     partmodelid: "3",
     partbrandid: "3",

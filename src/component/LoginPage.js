@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LoginPanel from "./LoginPanel";
-import loginlogo from "../img/otokoclogo.jpg";
+import loginlogo from "../img/placeholder-image.png";
 
 export default class LoginPage extends Component {
   render() {
