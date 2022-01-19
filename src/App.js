@@ -5,10 +5,11 @@ import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
 import React, { Component } from "react";
 import { Stack } from "@mui/material";
+import loginlogo from "./img/placeholder-image.png";
 
 const rows = [
   {
-    img: "",
+    img: <img src={loginlogo} style={{ width: "10%", height: "10%" }}></img>,
     partno: "10012423",
     partname: "Part1",
     price: 197.35,
@@ -17,7 +18,7 @@ const rows = [
     count:<input style={{width:"81px"}}></input>
   },
   {
-    img: "",
+    img: <img src={loginlogo} style={{ width: "10%", height: "10%" }}></img>,
     partno: "14278569",
     partname: "Part2",
     price: 15.35,
@@ -26,7 +27,7 @@ const rows = [
     count:<input style={{width:"81px"}}></input>
   },
   {
-    img: "",
+    img: <img src={loginlogo} style={{ width: "10%", height: "10%" }}></img>,
     partno: "55423610",
     partname: "Part3",
     price: 20.35,
@@ -35,7 +36,7 @@ const rows = [
     count:<input style={{width:"81px"}}></input>
   },
   {
-    img: "",
+    img: <img src={loginlogo} style={{ width: "10%", height: "10%" }}></img>,
     partno: "78487845",
     partname: "Part4",
     price: 1.35,
@@ -44,7 +45,7 @@ const rows = [
     count:<input style={{width:"81px"}}></input>
   },
   {
-    img: "",
+    img: <img src={loginlogo} style={{ width: "10%", height: "10%" }}></img>,
     partno: "68959638",
     partname: "Part5",
     price: 53.35,

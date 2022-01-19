@@ -11,6 +11,7 @@ import {
   FormControl,
   Button,
 } from "react-bootstrap";
+import loginlogo from "../img/placeholder-image.png";
 
 export default class Basket extends Component {
   constructor(props) {
