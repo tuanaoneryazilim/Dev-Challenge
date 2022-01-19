@@ -28,15 +28,15 @@ export default class Dashboard extends Component {
     return (
       <div className="Dashboard">
         <Dropdown className="dashdrop" isOpen={this.state.bisOpen} toggle={() => this.branddroptoggle()}>
-          <DropdownToggle className="dashdroptoggle" caret><h6 className="test">Marka</h6></DropdownToggle>
+          <DropdownToggle className="dashdroptoggle" caret><h6 className="droptext">Marka</h6></DropdownToggle>
           <DropdownMenu>
             {this.props.brands.map(brand => <DropdownItem key={brand.brandid}>{brand.brandname}</DropdownItem>)}
           </DropdownMenu>
         </Dropdown>
         <Dropdown className="dashdrop" isOpen={this.state.misOpen} toggle={() => this.modeldroptoggle()}>
-          <DropdownToggle className="dashdroptoggle" caret><h6 className="test">Marka</h6></DropdownToggle>
+          <DropdownToggle className="dashdroptoggle" caret><h6 className="droptext">Model</h6></DropdownToggle>
           <DropdownMenu>
-            {this.props.models.map(model => <DropdownItem key={model.modelid}>{model.modelname}</DropdownItem>)}
+            {this.props.models.map(model => <DropdownItem key={model.modelid} onClick={function noRefCheck(e){}}>{model.modelname}</DropdownItem>)}
           </DropdownMenu>
         </Dropdown>
         <StickyHeadTable rows={this.props.rows}></StickyHeadTable>

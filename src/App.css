@@ -74,9 +74,10 @@
 .dashdroptoggle {
   width: 343px;
 }
-.test
+.droptext
 {
   text-align: left;
   float:left;
   width:90%;
+  margin:auto;
 }
