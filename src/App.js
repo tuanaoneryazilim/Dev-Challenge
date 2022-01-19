@@ -14,6 +14,7 @@ const rows = [
     price: 197.35,
     partmodelid: "1",
     partbrandid: "1",
+    count:<input style={{width:"81px"}}></input>
   },
   {
     img: "",
@@ -22,6 +23,7 @@ const rows = [
     price: 15.35,
     partmodelid: "2",
     partbrandid: "2",
+    count:<input style={{width:"81px"}}></input>
   },
   {
     img: "",
@@ -30,6 +32,7 @@ const rows = [
     price: 20.35,
     partmodelid: "1",
     partbrandid: "2",
+    count:<input style={{width:"81px"}}></input>
   },
   {
     img: "",
@@ -38,6 +41,7 @@ const rows = [
     price: 1.35,
     partmodelid: "2",
     partbrandid: "1",
+    count:<input style={{width:"81px"}}></input>
   },
   {
     img: "",
@@ -46,6 +50,7 @@ const rows = [
     price: 53.35,
     partmodelid: "3",
     partbrandid: "3",
+    count:<input style={{width:"81px"}}></input>
   },
 ];
 

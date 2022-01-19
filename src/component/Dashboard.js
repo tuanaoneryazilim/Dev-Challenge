@@ -114,46 +114,51 @@ export default class Dashboard extends Component {
     } else {
       return (
         <div className="Dashboard">
-          <Dropdown
-            className="dashdrop"
-            isOpen={this.state.bisOpen}
-            toggle={() => this.branddroptoggle()}
-          >
-            <DropdownToggle className="dashdroptoggle" caret>
-              <h6 className="droptext">Marka</h6>
-            </DropdownToggle>
-            <DropdownMenu>
-              {this.props.brands.map((brand) => (
-                <DropdownItem
-                  id={brand.brandid}
-                  onClick={(e) => this.brandonClick(e)}
-                >
-                  {brand.brandname}
-                </DropdownItem>
-              ))}
-            </DropdownMenu>
-          </Dropdown>
-          <Dropdown
-            className="dashdrop"
-            isOpen={this.state.misOpen}
-            toggle={() => this.modeldroptoggle()}
-          >
-            <DropdownToggle className="dashdroptoggle" caret>
-              <h6 className="droptext">Model</h6>
-            </DropdownToggle>
-            <DropdownMenu>
-              {this.props.models.map((model) => (
-                <DropdownItem
-                  id={model.modelid}
-                  onClick={(e) => this.modelonClick(e)}
-                >
-                  {model.modelname}
-                </DropdownItem>
-              ))}
-            </DropdownMenu>
-          </Dropdown>
-          <StickyHeadTable rows={this.state.currows}></StickyHeadTable>
-          <Basket></Basket>
+          <div className="account">
+            <Accounts CurrentUser={this.props.CurrentUser}></Accounts>
+          </div>
+          <div className="otherdiv">
+            <Dropdown
+              className="dashdrop"
+              isOpen={this.state.bisOpen}
+              toggle={() => this.branddroptoggle()}
+            >
+              <DropdownToggle className="dashdroptoggle" caret>
+                <h6 className="droptext">Marka</h6>
+              </DropdownToggle>
+              <DropdownMenu>
+                {this.props.brands.map((brand) => (
+                  <DropdownItem
+                    id={brand.brandid}
+                    onClick={(e) => this.brandonClick(e)}
+                  >
+                    {brand.brandname}
+                  </DropdownItem>
+                ))}
+              </DropdownMenu>
+            </Dropdown>
+            <Dropdown
+              className="dashdrop"
+              isOpen={this.state.misOpen}
+              toggle={() => this.modeldroptoggle()}
+            >
+              <DropdownToggle className="dashdroptoggle" caret>
+                <h6 className="droptext">Model</h6>
+              </DropdownToggle>
+              <DropdownMenu>
+                {this.props.models.map((model) => (
+                  <DropdownItem
+                    id={model.modelid}
+                    onClick={(e) => this.modelonClick(e)}
+                  >
+                    {model.modelname}
+                  </DropdownItem>
+                ))}
+              </DropdownMenu>
+            </Dropdown>
+            <StickyHeadTable rows={this.state.currows}></StickyHeadTable>
+            <Basket></Basket>
+          </div>
         </div>
       );
     }
