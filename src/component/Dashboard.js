@@ -157,8 +157,9 @@ export default class Dashboard extends Component {
               </DropdownMenu>
             </Dropdown>
             <StickyHeadTable rows={this.state.currows}></StickyHeadTable>
-            <Basket></Basket>
+            
           </div>
+          <Basket></Basket>
         </div>
       );
     }
